@@ -12,8 +12,7 @@ app.use(cors()); //cors policies
 app.use(express.json()); //json parser
 
 //connects to uri of database, flags to deal with mongodb updates
-const uri = "mongodb+srv://bobby:XkdVHteHlnDKgreR@cluster0.mjlo9.mongodb.net/<dbname>?retryWrites=true&w=majority";
-//process.env.ATLAS_URI
+const uri = process.env.ATLAS_URI;
 mongoose.connect(uri, {useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true });
 const connection = mongoose.connection;
 connection.once('open', () => {
