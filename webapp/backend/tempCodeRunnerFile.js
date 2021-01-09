@@ -1,0 +1,1 @@
+require('dotenv').config(); //config environment variables in .env file

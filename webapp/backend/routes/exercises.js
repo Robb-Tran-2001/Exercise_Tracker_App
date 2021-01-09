@@ -3,10 +3,9 @@ let Exercise = require('../models/exercise.model');
 
 //path for get requests
 router.route('/').get((req, res) => {
-    //find in database
     Exercise.find()
-        .then(exercises => res.json(exercises)) //then responds as json
-        .catch(err => res.status(400).json('Error: ' + err)); //responds error as json
+        .then(exercises => res.json(exercises))
+        .catch(err => res.status(400).json('Error: ' + err));
 });
 
 router.route('/add').post((req, res) => {
